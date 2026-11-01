@@ -1,32 +1,18 @@
-// Bộ dữ liệu 16 cụm từ & tính từ đi với giới từ Tiếng Anh
-// Mỗi mục gồm 2 bước: Bước 1 (Cấu trúc) & Bước 2 (Câu ví dụ thực tế)
-export const vocabularyData = [
+// Danh sách 16 bài học (32 câu hỏi: 16 Cấu trúc + 16 Câu ví dụ thực tế)
+export const practiceUnits = [
   {
     id: 1,
-    category: "Cụm động từ thông dụng",
-    term: "look forward to + V-ing/N",
-    meaning: "trông mong, mong đợi điều gì",
-    ipa: "/lʊk ˈfɔːwəd tuː/",
-    note: "⚠️ Lưu ý quan trọng: 'to' ở đây là giới từ, do đó theo sau PHẢI là V-ing hoặc Danh từ (N), tuyệt đối KHÔNG dùng V nguyên thể!",
-    part1: {
-      title: "Bước 1: Nắm vững cấu trúc",
-      promptVi: "Chọn giới từ và dạng động từ đúng đi với:",
-      meaningHighlight: "Trông mong, mong đợi điều gì",
-      leftCard: "look forward",
+    name: "look forward to",
+    step1: {
+      promptVi: "Trông mong, mong đợi điều gì",
+      left: "look forward",
       correct: "to + V-ing / N",
-      options: [
-        "to + V-ing / N",
-        "to + V-bare (nguyên mẫu)",
-        "for + V-ing",
-        "at + Noun"
-      ],
-      explanation: "Công thức chuẩn là: look forward to + V-ing / N (Trông mong điều gì)."
+      options: ["to + V-ing / N", "to + V-bare", "for + V-ing", "at + N"],
+      fullEn: "look forward to + V-ing / N"
     },
-    part2: {
-      title: "Bước 2: Ứng dụng vào câu thực tế",
-      promptVi: "Ghép nửa câu đúng để hoàn thành câu:",
-      meaningHighlight: "Tôi rất trông mong nhận được hồi âm từ bạn",
-      leftCard: "I am really looking forward",
+    step2: {
+      promptVi: "Tôi rất trông mong nhận được hồi âm từ bạn",
+      left: "I am looking forward",
       correct: "to hearing from you soon",
       options: [
         "to hearing from you soon",
@@ -34,113 +20,68 @@ export const vocabularyData = [
         "for hearing from you soon",
         "with hearing from you soon"
       ],
-      fullSentence: "I am really looking forward to hearing from you soon.",
-      sentenceVi: "Tôi thực sự rất mong sớm nhận được tin tức hồi âm từ bạn.",
-      explanation: "Sau 'looking forward to' bắt buộc phải là V-ing ('hearing'), không dùng 'to hear'!"
+      fullEn: "I am looking forward to hearing from you soon."
     }
   },
   {
     id: 2,
-    category: "Cụm động từ thông dụng",
-    term: "hear from + someone",
-    meaning: "nhận được tin tức, liên lạc từ ai đó",
-    ipa: "/hɪər frəm/",
-    note: "💡 Phân biệt: 'hear from someone' = nhận thư/tin nhắn/cuộc gọi từ ai; khác với 'hear of / hear about' = nghe nói, biết đến sự tồn tại của ai/cái gì.",
-    part1: {
-      title: "Bước 1: Nắm vững cấu trúc",
-      promptVi: "Chọn giới từ đúng đi với động từ:",
-      meaningHighlight: "Nhận được tin tức, liên lạc từ ai đó",
-      leftCard: "hear",
+    name: "hear from",
+    step1: {
+      promptVi: "Nhận được tin tức, liên lạc từ ai đó",
+      left: "hear",
       correct: "from + someone",
-      options: [
-        "from + someone",
-        "to + someone",
-        "with + someone",
-        "at + someone"
-      ],
-      explanation: "'Hear from someone' nghĩa là nhận được thư, tin nhắn, cuộc gọi từ ai."
+      options: ["from + someone", "to + someone", "with + someone", "at + someone"],
+      fullEn: "hear from + someone"
     },
-    part2: {
-      title: "Bước 2: Ứng dụng vào câu thực tế",
-      promptVi: "Ghép vế tiếp theo cho câu:",
-      meaningHighlight: "Thật tuyệt vời khi nhận được tin tức từ bạn sau bao năm",
-      leftCard: "It is wonderful to hear",
-      correct: "from you after so many years",
+    step2: {
+      promptVi: "Thật tuyệt khi nhận được tin tức từ bạn",
+      left: "It is great to hear",
+      correct: "from you after so long",
       options: [
-        "from you after so many years",
-        "to you after so many years",
-        "with you after so many years",
-        "at you after so many years"
+        "from you after so long",
+        "to you after so long",
+        "with you after so long",
+        "at you after so long"
       ],
-      fullSentence: "It is wonderful to hear from you after so many years.",
-      sentenceVi: "Thật tuyệt vời khi nhận được tin tức từ bạn sau ngần ấy năm.",
-      explanation: "Cụm chuẩn: 'hear from you' (nhận được tin từ bạn)."
+      fullEn: "It is great to hear from you after so long."
     }
   },
   {
     id: 3,
-    category: "Cụm động từ thông dụng",
-    term: "say hello to + someone",
-    meaning: "gửi lời chào tới ai đó",
-    ipa: "/seɪ həˈləʊ tuː/",
-    note: "💡 'Say hello to someone for me' là câu cửa miệng rất lịch sự khi nhờ ai đó chuyển lời chào.",
-    part1: {
-      title: "Bước 1: Nắm vững cấu trúc",
-      promptVi: "Chọn giới từ đúng cho cụm từ:",
-      meaningHighlight: "Gửi lời chào tới ai đó",
-      leftCard: "say hello",
+    name: "say hello to",
+    step1: {
+      promptVi: "Gửi lời chào tới ai đó",
+      left: "say hello",
       correct: "to + someone",
-      options: [
-        "to + someone",
-        "with + someone",
-        "for + someone",
-        "at + someone"
-      ],
-      explanation: "'Say hello to someone' = gửi lời chào tới ai."
+      options: ["to + someone", "with + someone", "for + someone", "at + someone"],
+      fullEn: "say hello to + someone"
     },
-    part2: {
-      title: "Bước 2: Ứng dụng vào câu thực tế",
-      promptVi: "Ghép phần còn lại của câu nhờ gửi lời chào:",
-      meaningHighlight: "Hãy gửi lời chào của tôi tới bố mẹ bạn nhé!",
-      leftCard: "Please say hello",
+    step2: {
+      promptVi: "Hãy gửi lời chào của tôi tới bố mẹ bạn nhé",
+      left: "Please say hello",
       correct: "to your parents for me",
       options: [
         "to your parents for me",
         "with your parents for me",
-        "at your parents for me",
-        "for your parents for me"
+        "for your parents for me",
+        "at your parents for me"
       ],
-      fullSentence: "Please say hello to your parents for me.",
-      sentenceVi: "Làm ơn gửi lời chào của tôi tới bố mẹ bạn nhé.",
-      explanation: "'Say hello to your parents' mang nghĩa gửi lời chào tới cha mẹ bạn."
+      fullEn: "Please say hello to your parents for me."
     }
   },
   {
     id: 4,
-    category: "Cụm tính từ đi với giới từ",
-    term: "good at",
-    meaning: "giỏi về môn gì hoặc việc gì",
-    ipa: "/ɡʊd æt/",
-    note: "💡 Cấu trúc: be good at + Noun / V-ing (giỏi làm việc gì).",
-    part1: {
-      title: "Bước 1: Nắm vững cấu trúc",
-      promptVi: "Chọn giới từ đi kèm với tính từ 'good':",
-      meaningHighlight: "Giỏi về môn gì hoặc việc gì",
-      leftCard: "good",
-      correct: "at + N / V-ing",
-      options: [
-        "at + N / V-ing",
-        "in + N / V-ing",
-        "with + N / V-ing",
-        "on + N / V-ing"
-      ],
-      explanation: "'Good at' là cụm cố định chỉ sở trường, năng khiếu làm việc gì."
+    name: "good at",
+    step1: {
+      promptVi: "Giỏi về môn gì hoặc việc gì",
+      left: "good",
+      correct: "at",
+      options: ["at", "in", "with", "on"],
+      fullEn: "good at"
     },
-    part2: {
-      title: "Bước 2: Ứng dụng vào câu thực tế",
-      promptVi: "Ghép cụm từ đúng để khen ngợi khả năng toán học:",
-      meaningHighlight: "Cô ấy cực kỳ giỏi giải các bài toán khó",
-      leftCard: "She is extremely good",
+    step2: {
+      promptVi: "Cô ấy rất giỏi giải các bài toán khó",
+      left: "She is very good",
       correct: "at solving difficult math problems",
       options: [
         "at solving difficult math problems",
@@ -148,113 +89,68 @@ export const vocabularyData = [
         "to solve difficult math problems",
         "with solve difficult math problems"
       ],
-      fullSentence: "She is extremely good at solving difficult math problems.",
-      sentenceVi: "Cô ấy cực kỳ giỏi việc giải quyết các bài toán hóc búa.",
-      explanation: "Ta dùng 'good at' + V-ing ('solving')."
+      fullEn: "She is very good at solving difficult math problems."
     }
   },
   {
     id: 5,
-    category: "Cụm tính từ đi với giới từ",
-    term: "bad at",
-    meaning: "dở, kém về việc gì",
-    ipa: "/bæd æt/",
-    note: "💡 Ngược nghĩa với 'good at'. Cấu trúc: be bad at + N / V-ing.",
-    part1: {
-      title: "Bước 1: Nắm vững cấu trúc",
-      promptVi: "Chọn giới từ đúng đi với tính từ 'bad':",
-      meaningHighlight: "Dở, kém về việc gì",
-      leftCard: "bad",
-      correct: "at + N / V-ing",
-      options: [
-        "at + N / V-ing",
-        "about + N / V-ing",
-        "for + N / V-ing",
-        "in + N / V-ing"
-      ],
-      explanation: "'Bad at' là cụm cố định biểu đạt sự dở, kém cỏi trong lĩnh vực nào đó."
+    name: "bad at",
+    step1: {
+      promptVi: "Dở, kém về việc gì",
+      left: "bad",
+      correct: "at",
+      options: ["at", "about", "for", "in"],
+      fullEn: "bad at"
     },
-    part2: {
-      title: "Bước 2: Ứng dụng vào câu thực tế",
-      promptVi: "Ghép vế tiếp theo cho câu thừa nhận điểm yếu:",
-      meaningHighlight: "Tôi rất tệ trong việc nhớ tên người khác",
-      leftCard: "I have always been bad",
+    step2: {
+      promptVi: "Tôi rất tệ trong việc nhớ tên người khác",
+      left: "I am really bad",
       correct: "at remembering people's names",
       options: [
         "at remembering people's names",
         "in remembering people's names",
-        "about remember people's names",
-        "for remembering people's names"
+        "about remembering people's names",
+        "for remember people's names"
       ],
-      fullSentence: "I have always been bad at remembering people's names.",
-      sentenceVi: "Tôi lúc nào cũng rất tệ trong việc ghi nhớ tên của người khác.",
-      explanation: "Dùng 'bad at' + V-ing ('remembering')."
+      fullEn: "I am really bad at remembering people's names."
     }
   },
   {
     id: 6,
-    category: "Cụm tính từ đi với giới từ",
-    term: "useless at",
-    meaning: "rất tệ, vụng về trong việc gì",
-    ipa: "/ˈjuːsləs æt/",
-    note: "💡 'Useless at' nhấn mạnh mức độ kém cỏi, vô dụng, hoàn toàn không có kỹ năng ở việc gì.",
-    part1: {
-      title: "Bước 1: Nắm vững cấu trúc",
-      promptVi: "Chọn giới từ đúng cho tính từ 'useless':",
-      meaningHighlight: "Rất tệ, vụng về trong việc gì",
-      leftCard: "useless",
-      correct: "at + N / V-ing",
-      options: [
-        "at + N / V-ing",
-        "with + N / V-ing",
-        "for + N / V-ing",
-        "on + N / V-ing"
-      ],
-      explanation: "'Useless at' dùng giới từ 'at' tương tự như 'good at' và 'bad at'."
+    name: "useless at",
+    step1: {
+      promptVi: "Rất tệ, vụng về trong việc gì",
+      left: "useless",
+      correct: "at",
+      options: ["at", "with", "for", "on"],
+      fullEn: "useless at"
     },
-    part2: {
-      title: "Bước 2: Ứng dụng vào câu thực tế",
-      promptVi: "Hoàn thiện câu miêu tả sự vụng về nội trợ:",
-      meaningHighlight: "Anh ấy hoàn toàn vụng về trong chuyện nấu nướng",
-      leftCard: "He is completely useless",
-      correct: "at cooking even simple meals",
+    step2: {
+      promptVi: "Anh ấy hoàn toàn vụng về trong việc nấu nướng",
+      left: "He is completely useless",
+      correct: "at cooking simple meals",
       options: [
-        "at cooking even simple meals",
-        "in cooking even simple meals",
-        "with cooking even simple meals",
-        "for cooking even simple meals"
+        "at cooking simple meals",
+        "in cooking simple meals",
+        "with cook simple meals",
+        "for cooking simple meals"
       ],
-      fullSentence: "He is completely useless at cooking even simple meals.",
-      sentenceVi: "Anh ấy hoàn toàn vụng về trong việc nấu nướng kể cả những món đơn giản.",
-      explanation: "Dùng 'useless at' + V-ing ('cooking')."
+      fullEn: "He is completely useless at cooking simple meals."
     }
   },
   {
     id: 7,
-    category: "Cụm tính từ đi với giới từ",
-    term: "excited about",
-    meaning: "hào hứng, phấn khích về điều gì",
-    ipa: "/ɪkˈsaɪtɪd əˈbaʊt/",
-    note: "💡 Cấu trúc: be excited about something / doing something. (Đôi khi có thể gặp 'excited at the thought of').",
-    part1: {
-      title: "Bước 1: Nắm vững cấu trúc",
-      promptVi: "Chọn giới từ phổ biến nhất với 'excited':",
-      meaningHighlight: "Hào hứng, phấn khích về điều gì",
-      leftCard: "excited",
-      correct: "about + N / V-ing",
-      options: [
-        "about + N / V-ing",
-        "for + N / V-ing",
-        "with + N / V-ing",
-        "in + N / V-ing"
-      ],
-      explanation: "'Excited about' là cấu trúc thông dụng nhất chỉ tâm trạng háo hức, mong chờ."
+    name: "excited about",
+    step1: {
+      promptVi: "Hào hứng, phấn khích về điều gì",
+      left: "excited",
+      correct: "about",
+      options: ["about", "for", "with", "at"],
+      fullEn: "excited about"
     },
-    part2: {
-      title: "Bước 2: Ứng dụng vào câu thực tế",
-      promptVi: "Chọn vế sau miêu tả tâm trạng của trẻ nhỏ:",
-      meaningHighlight: "Bọn trẻ đang rất hào hứng về chuyến cắm trại sắp tới",
-      leftCard: "The children are so excited",
+    step2: {
+      promptVi: "Bọn trẻ rất hào hứng về chuyến dã ngoại sắp tới",
+      left: "The kids are so excited",
       correct: "about the upcoming camping trip",
       options: [
         "about the upcoming camping trip",
@@ -262,75 +158,45 @@ export const vocabularyData = [
         "for the upcoming camping trip",
         "at the upcoming camping trip"
       ],
-      fullSentence: "The children are so excited about the upcoming camping trip.",
-      sentenceVi: "Lũ trẻ đang vô cùng hào hứng về chuyến đi cắm trại sắp tới.",
-      explanation: "'Excited about the upcoming trip' diễn tả sự phấn khích về chuyến đi."
+      fullEn: "The kids are so excited about the upcoming camping trip."
     }
   },
   {
     id: 8,
-    category: "Cụm tính từ đi với giới từ",
-    term: "crazy about",
-    meaning: "cuồng, rất mê cái gì",
-    ipa: "/ˈkreɪzi əˈbaʊt/",
-    note: "💡 'Crazy about' dùng để diễn tả niềm đam mê cháy bỏng hoặc yêu thích tột độ một ai đó/thứ gì đó.",
-    part1: {
-      title: "Bước 1: Nắm vững cấu trúc",
-      promptVi: "Chọn giới từ đúng đi với 'crazy':",
-      meaningHighlight: "Cuồng, rất mê cái gì",
-      leftCard: "crazy",
-      correct: "about + N / V-ing",
-      options: [
-        "about + N / V-ing",
-        "on + N / V-ing",
-        "with + N / V-ing",
-        "at + N / V-ing"
-      ],
-      explanation: "'Crazy about' = say mê cuồng nhiệt."
+    name: "crazy about",
+    step1: {
+      promptVi: "Cuồng, rất mê cái gì",
+      left: "crazy",
+      correct: "about",
+      options: ["about", "on", "with", "at"],
+      fullEn: "crazy about"
     },
-    part2: {
-      title: "Bước 2: Ứng dụng vào câu thực tế",
-      promptVi: "Ghép câu nói về sở thích cuồng nhiệt:",
-      meaningHighlight: "Em trai tôi cực kỳ cuồng chơi trò chơi điện tử",
-      leftCard: "My little brother is crazy",
+    step2: {
+      promptVi: "Em trai tôi rất mê chơi trò chơi điện tử",
+      left: "My brother is crazy",
       correct: "about playing video games",
       options: [
         "about playing video games",
         "at playing video games",
         "on playing video games",
-        "with playing video games"
+        "with play video games"
       ],
-      fullSentence: "My little brother is crazy about playing video games.",
-      sentenceVi: "Em trai nhỏ của tôi mê tít việc chơi game điện tử.",
-      explanation: "Cấu trúc: 'crazy about' + V-ing ('playing')."
+      fullEn: "My brother is crazy about playing video games."
     }
   },
   {
     id: 9,
-    category: "Cụm tính từ đi với giới từ",
-    term: "mad about",
-    meaning: "say mê, cuồng nhiệt vì cái gì",
-    ipa: "/mæd əˈbaʊt/",
-    note: "💡 'Mad about' (đặc biệt trong tiếng Anh - Anh) đồng nghĩa với 'crazy about' = say đắm, say mê.",
-    part1: {
-      title: "Bước 1: Nắm vững cấu trúc",
-      promptVi: "Chọn giới từ mang nghĩa 'say mê, cuồng nhiệt' đi với 'mad':",
-      meaningHighlight: "Say mê, cuồng nhiệt vì cái gì",
-      leftCard: "mad",
-      correct: "about + N / V-ing",
-      options: [
-        "about + N / V-ing",
-        "in + N / V-ing",
-        "to + N / V-ing",
-        "at + N / V-ing"
-      ],
-      explanation: "'Mad about something' có nghĩa là rất say mê, cuồng cái gì."
+    name: "mad about",
+    step1: {
+      promptVi: "Say mê, cuồng nhiệt vì cái gì",
+      left: "mad",
+      correct: "about",
+      options: ["about", "in", "to", "at"],
+      fullEn: "mad about"
     },
-    part2: {
-      title: "Bước 2: Ứng dụng vào câu thực tế",
-      promptVi: "Hoàn thành câu nói về niềm đam mê âm nhạc:",
-      meaningHighlight: "Cô ấy say mê âm nhạc cổ điển từ khi còn bé",
-      leftCard: "She has always been mad",
+    step2: {
+      promptVi: "Cô ấy say mê âm nhạc cổ điển từ thuở bé",
+      left: "She is mad",
       correct: "about classical music since childhood",
       options: [
         "about classical music since childhood",
@@ -338,37 +204,22 @@ export const vocabularyData = [
         "with classical music since childhood",
         "at classical music since childhood"
       ],
-      fullSentence: "She has always been mad about classical music since childhood.",
-      sentenceVi: "Cô ấy luôn luôn say mê âm nhạc cổ điển từ thuở ấu thơ.",
-      explanation: "'Mad about classical music' = đam mê âm nhạc cổ điển."
+      fullEn: "She is mad about classical music since childhood."
     }
   },
   {
     id: 10,
-    category: "Cụm tính từ đi với giới từ",
-    term: "serious about",
-    meaning: "nghiêm túc về điều gì hoặc việc làm gì",
-    ipa: "/ˈsɪəriəs əˈbaʊt/",
-    note: "💡 Cấu trúc: be serious about something / doing something. Diễn tả thái độ đứng đắn, không đùa cợt.",
-    part1: {
-      title: "Bước 1: Nắm vững cấu trúc",
-      promptVi: "Chọn giới từ đi kèm với 'serious':",
-      meaningHighlight: "Nghiêm túc về điều gì hoặc việc làm gì",
-      leftCard: "serious",
-      correct: "about + N / V-ing",
-      options: [
-        "about + N / V-ing",
-        "with + N / V-ing",
-        "for + N / V-ing",
-        "at + N / V-ing"
-      ],
-      explanation: "'Serious about' diễn tả sự nghiêm túc, quyết tâm thực hiện điều gì."
+    name: "serious about",
+    step1: {
+      promptVi: "Nghiêm túc về điều gì hoặc việc làm gì",
+      left: "serious",
+      correct: "about",
+      options: ["about", "with", "for", "at"],
+      fullEn: "serious about"
     },
-    part2: {
-      title: "Bước 2: Ứng dụng vào câu thực tế",
-      promptVi: "Ghép vế tiếp theo cho câu hỏi quyết tâm học tập:",
-      meaningHighlight: "Bạn có thực sự nghiêm túc về việc học một ngôn ngữ mới không?",
-      leftCard: "Are you really serious",
+    step2: {
+      promptVi: "Bạn có thực sự nghiêm túc về việc học ngoại ngữ mới?",
+      left: "Are you really serious",
       correct: "about learning a new language?",
       options: [
         "about learning a new language?",
@@ -376,37 +227,22 @@ export const vocabularyData = [
         "for learning a new language?",
         "at learning a new language?"
       ],
-      fullSentence: "Are you really serious about learning a new language?",
-      sentenceVi: "Bạn có thực sự nghiêm túc với việc học một ngoại ngữ mới không?",
-      explanation: "'Serious about' + V-ing ('learning')."
+      fullEn: "Are you really serious about learning a new language?"
     }
   },
   {
     id: 11,
-    category: "Cụm tính từ đi với giới từ",
-    term: "worried about",
-    meaning: "lo lắng về điều gì",
-    ipa: "/ˈwʌrid əˈbaʊt/",
-    note: "💡 Cấu trúc: be worried about something / someone.",
-    part1: {
-      title: "Bước 1: Nắm vững cấu trúc",
-      promptVi: "Chọn giới từ chính xác đi với 'worried':",
-      meaningHighlight: "Lo lắng về điều gì",
-      leftCard: "worried",
-      correct: "about + N / V-ing",
-      options: [
-        "about + N / V-ing",
-        "with + N / V-ing",
-        "for + N / V-ing",
-        "at + N / V-ing"
-      ],
-      explanation: "'Worried about' là cụm chuẩn biểu thị tâm trạng bồn chồn, lo lắng."
+    name: "worried about",
+    step1: {
+      promptVi: "Lo lắng về điều gì",
+      left: "worried",
+      correct: "about",
+      options: ["about", "with", "for", "at"],
+      fullEn: "worried about"
     },
-    part2: {
-      title: "Bước 2: Ứng dụng vào câu thực tế",
-      promptVi: "Ghép câu nói về sự quan tâm của mẹ:",
-      meaningHighlight: "Mẹ tôi lúc nào cũng lo lắng về sức khỏe của tôi",
-      leftCard: "My mother is always worried",
+    step2: {
+      promptVi: "Mẹ tôi lúc nào cũng lo lắng về sức khỏe của tôi",
+      left: "My mother is always worried",
       correct: "about my health and diet",
       options: [
         "about my health and diet",
@@ -414,37 +250,22 @@ export const vocabularyData = [
         "for my health and diet",
         "at my health and diet"
       ],
-      fullSentence: "My mother is always worried about my health and diet.",
-      sentenceVi: "Mẹ tôi lúc nào cũng bận tâm, lo lắng về sức khỏe và chế độ ăn của tôi.",
-      explanation: "'Worried about my health' = lo lắng về sức khỏe của tôi."
+      fullEn: "My mother is always worried about my health and diet."
     }
   },
   {
     id: 12,
-    category: "Cụm tính từ đi với giới từ",
-    term: "disappointed with / about",
-    meaning: "thất vọng với hoặc về ai, cái gì",
-    ipa: "/ˌdɪsəˈpɔɪntɪd wɪð/",
-    note: "💡 Thường dùng: 'disappointed with / in someone' (thất vọng về ai) và 'disappointed with / about something' (thất vọng về cái gì).",
-    part1: {
-      title: "Bước 1: Nắm vững cấu trúc",
-      promptVi: "Chọn các giới từ đi kèm với 'disappointed':",
-      meaningHighlight: "Thất vọng với hoặc về ai, cái gì",
-      leftCard: "disappointed",
-      correct: "with / about + N",
-      options: [
-        "with / about + N",
-        "at / for + N",
-        "to / in + N",
-        "from / of + N"
-      ],
-      explanation: "'Disappointed' thường kết hợp với 'with' hoặc 'about' (hoặc 'in')."
+    name: "disappointed with / about",
+    step1: {
+      promptVi: "Thất vọng với hoặc về ai, cái gì",
+      left: "disappointed",
+      correct: "with / about",
+      options: ["with / about", "at / for", "to / in", "from / of"],
+      fullEn: "disappointed with / about"
     },
-    part2: {
-      title: "Bước 2: Ứng dụng vào câu thực tế",
-      promptVi: "Ghép vế nói về tâm trạng sau trận đấu:",
-      meaningHighlight: "Chúng tôi đã rất thất vọng về kết quả trận đấu ngày hôm qua",
-      leftCard: "We were deeply disappointed",
+    step2: {
+      promptVi: "Chúng tôi rất thất vọng về kết quả trận đấu",
+      left: "We were very disappointed",
       correct: "with the match result yesterday",
       options: [
         "with the match result yesterday",
@@ -452,37 +273,22 @@ export const vocabularyData = [
         "for the match result yesterday",
         "to the match result yesterday"
       ],
-      fullSentence: "We were deeply disappointed with the match result yesterday.",
-      sentenceVi: "Chúng tôi đã vô cùng thất vọng với kết quả trận đấu ngày hôm qua.",
-      explanation: "Dùng 'disappointed with the result' (thất vọng với kết quả)."
+      fullEn: "We were very disappointed with the match result yesterday."
     }
   },
   {
     id: 13,
-    category: "Cụm tính từ đi với giới từ",
-    term: "keen on",
-    meaning: "thích thú, hào hứng với cái gì",
-    ipa: "/kiːn ɒn/",
-    note: "💡 Cấu trúc: be keen on + N / V-ing. Đồng nghĩa với 'be interested in', 'be fond of'.",
-    part1: {
-      title: "Bước 1: Nắm vững cấu trúc",
-      promptVi: "Chọn giới từ đúng đi với 'keen':",
-      meaningHighlight: "Thích thú, hào hứng với cái gì",
-      leftCard: "keen",
-      correct: "on + N / V-ing",
-      options: [
-        "on + N / V-ing",
-        "in + N / V-ing",
-        "at + N / V-ing",
-        "about + N / V-ing"
-      ],
-      explanation: "'Keen on' là cụm cố định mang nghĩa yêu thích, đam mê làm việc gì."
+    name: "keen on",
+    step1: {
+      promptVi: "Thích thú, hào hứng với cái gì",
+      left: "keen",
+      correct: "on",
+      options: ["on", "in", "at", "about"],
+      fullEn: "keen on"
     },
-    part2: {
-      title: "Bước 2: Ứng dụng vào câu thực tế",
-      promptVi: "Ghép câu nói về việc không thích dậy sớm:",
-      meaningHighlight: "Tôi không hào hứng lắm với việc thức dậy sớm vào mùa đông",
-      leftCard: "I am not particularly keen",
+    step2: {
+      promptVi: "Tôi không hào hứng lắm với việc thức dậy sớm vào mùa đông",
+      left: "I am not keen",
       correct: "on waking up early in winter",
       options: [
         "on waking up early in winter",
@@ -490,75 +296,45 @@ export const vocabularyData = [
         "at waking up early in winter",
         "about waking up early in winter"
       ],
-      fullSentence: "I am not particularly keen on waking up early in winter.",
-      sentenceVi: "Tôi chẳng hào hứng chút nào với việc phải thức dậy sớm vào mùa đông.",
-      explanation: "Cấu trúc: 'keen on' + V-ing ('waking up')."
+      fullEn: "I am not keen on waking up early in winter."
     }
   },
   {
     id: 14,
-    category: "Cụm tính từ đi với giới từ",
-    term: "involved in",
-    meaning: "tham gia vào việc gì, tổ chức nào",
-    ipa: "/ɪnˈvɒlvd ɪn/",
-    note: "💡 Cấu trúc: be / get involved in something: dấn thân, tham gia đóng góp tích cực vào một hoạt động hay dự án.",
-    part1: {
-      title: "Bước 1: Nắm vững cấu trúc",
-      promptVi: "Chọn giới từ chuẩn xác đi với 'involved':",
-      meaningHighlight: "Tham gia vào việc gì, tổ chức nào",
-      leftCard: "involved",
-      correct: "in + N / V-ing",
-      options: [
-        "in + N / V-ing",
-        "with + N / V-ing",
-        "on + N / V-ing",
-        "at + N / V-ing"
-      ],
-      explanation: "'Involved in' mang nghĩa tham gia, dính líu hoặc đóng góp vào việc gì."
+    name: "involved in",
+    step1: {
+      promptVi: "Tham gia vào việc gì, tổ chức nào",
+      left: "involved",
+      correct: "in",
+      options: ["in", "with", "on", "at"],
+      fullEn: "involved in"
     },
-    part2: {
-      title: "Bước 2: Ứng dụng vào câu thực tế",
-      promptVi: "Ghép vế nói về hoạt động thiện nguyện của sinh viên:",
-      meaningHighlight: "Nhiều sinh viên đã tích cực tham gia vào dự án từ thiện cộng đồng này",
-      leftCard: "Many students got involved",
-      correct: "in this community charity project",
+    step2: {
+      promptVi: "Nhiều sinh viên đã tham gia vào dự án từ thiện này",
+      left: "Many students got involved",
+      correct: "in this charity project",
       options: [
-        "in this community charity project",
-        "with this community charity project",
-        "on this community charity project",
-        "at this community charity project"
+        "in this charity project",
+        "with this charity project",
+        "on this charity project",
+        "at this charity project"
       ],
-      fullSentence: "Many students got involved in this community charity project.",
-      sentenceVi: "Rất nhiều bạn sinh viên đã nhiệt tình tham gia vào dự án từ thiện cộng đồng này.",
-      explanation: "'Got involved in this project' = tham gia vào dự án này."
+      fullEn: "Many students got involved in this charity project."
     }
   },
   {
     id: 15,
-    category: "Cụm tính từ đi với giới từ",
-    term: "obsessed with",
-    meaning: "bị ám ảnh, quá mê mẩn cái gì",
-    ipa: "/əbˈsest wɪð/",
-    note: "💡 Cấu trúc: be obsessed with someone / something: tâm trí lúc nào cũng nghĩ về ai/cái gì đến mức ám ảnh.",
-    part1: {
-      title: "Bước 1: Nắm vững cấu trúc",
-      promptVi: "Chọn giới từ đúng đi với 'obsessed':",
-      meaningHighlight: "Bị ám ảnh, quá mê mẩn cái gì",
-      leftCard: "obsessed",
-      correct: "with + N / V-ing",
-      options: [
-        "with + N / V-ing",
-        "about + N / V-ing",
-        "by + N / V-ing",
-        "in + N / V-ing"
-      ],
-      explanation: "'Obsessed with' là cụm từ chuẩn chỉ sự ám ảnh hoặc mê mẩn quá mức."
+    name: "obsessed with",
+    step1: {
+      promptVi: "Bị ám ảnh, quá mê mẩn cái gì",
+      left: "obsessed",
+      correct: "with",
+      options: ["with", "about", "by", "in"],
+      fullEn: "obsessed with"
     },
-    part2: {
-      title: "Bước 2: Ứng dụng vào câu thực tế",
-      promptVi: "Ghép vế sau miêu tả người cầu toàn quá mức:",
-      meaningHighlight: "Dạo gần đây anh ấy dường như bị ám ảnh bởi sự hoàn hảo",
-      leftCard: "He seems completely obsessed",
+    step2: {
+      promptVi: "Anh ấy dường như bị ám ảnh bởi sự hoàn hảo",
+      left: "He seems obsessed",
       correct: "with perfection these days",
       options: [
         "with perfection these days",
@@ -566,37 +342,22 @@ export const vocabularyData = [
         "by perfection these days",
         "in perfection these days"
       ],
-      fullSentence: "He seems completely obsessed with perfection these days.",
-      sentenceVi: "Dạo này anh ấy dường như bị ám ảnh hoàn toàn bởi sự hoàn hảo.",
-      explanation: "'Obsessed with perfection' = ám ảnh với sự hoàn hảo."
+      fullEn: "He seems obsessed with perfection these days."
     }
   },
   {
     id: 16,
-    category: "Cụm tính từ đi với giới từ",
-    term: "afraid of",
-    meaning: "sợ hãi cái gì",
-    ipa: "/əˈfreɪd əv/",
-    note: "💡 Cấu trúc: be afraid of + N / V-ing (sợ cái gì/làm gì); lưu ý: 'be afraid to do something' (ngại/không dám làm gì vì sợ hậu quả).",
-    part1: {
-      title: "Bước 1: Nắm vững cấu trúc",
-      promptVi: "Chọn giới từ đúng đi với 'afraid':",
-      meaningHighlight: "Sợ hãi cái gì",
-      leftCard: "afraid",
-      correct: "of + N / V-ing",
-      options: [
-        "of + N / V-ing",
-        "with + N / V-ing",
-        "to + N / V-ing",
-        "for + N / V-ing"
-      ],
-      explanation: "'Afraid of' đi với Danh từ hoặc V-ing để chỉ nỗi sợ điều gì."
+    name: "afraid of",
+    step1: {
+      promptVi: "Sợ hãi cái gì",
+      left: "afraid",
+      correct: "of",
+      options: ["of", "with", "to", "for"],
+      fullEn: "afraid of"
     },
-    part2: {
-      title: "Bước 2: Ứng dụng vào câu thực tế",
-      promptVi: "Ghép lời khuyên động viên khi học tập:",
-      meaningHighlight: "Đừng sợ mắc lỗi khi bạn học điều mới",
-      leftCard: "Do not be afraid",
+    step2: {
+      promptVi: "Đừng sợ mắc sai lầm khi bạn đang học",
+      left: "Do not be afraid",
       correct: "of making mistakes when learning",
       options: [
         "of making mistakes when learning",
@@ -604,9 +365,29 @@ export const vocabularyData = [
         "to making mistakes when learning",
         "for making mistakes when learning"
       ],
-      fullSentence: "Do not be afraid of making mistakes when learning.",
-      sentenceVi: "Đừng bao giờ sợ mắc sai lầm khi đang học hỏi những điều mới.",
-      explanation: "'Afraid of' + V-ing ('making mistakes')."
+      fullEn: "Do not be afraid of making mistakes when learning."
     }
   }
 ];
+
+// Trích xuất toàn bộ ngân hàng câu hỏi độc lập cho Phần Kiểm Tra (32 câu)
+export const allQuestionsBank = practiceUnits.flatMap(unit => [
+  {
+    unitId: unit.id,
+    type: "Cấu trúc",
+    promptVi: unit.step1.promptVi,
+    left: unit.step1.left,
+    correct: unit.step1.correct,
+    options: unit.step1.options,
+    fullEn: unit.step1.fullEn
+  },
+  {
+    unitId: unit.id,
+    type: "Ví dụ mẫu",
+    promptVi: unit.step2.promptVi,
+    left: unit.step2.left,
+    correct: unit.step2.correct,
+    options: unit.step2.options,
+    fullEn: unit.step2.fullEn
+  }
+]);
