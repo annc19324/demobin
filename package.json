@@ -4,8 +4,8 @@
   "description": "Interactive English Learning & Memorization Web App (Phrasal verbs and Prepositions)",
   "main": "index.html",
   "scripts": {
-    "start": "npx serve -s . -p 3000",
-    "dev": "npx serve -s . -p 3000"
+    "start": "node server.mjs",
+    "dev": "node server.mjs"
   },
   "keywords": [
     "english",
