@@ -1,0 +1,19 @@
+{
+  "name": "demobin-engmastery",
+  "version": "1.0.0",
+  "description": "Interactive English Learning & Memorization Web App (Phrasal verbs and Prepositions)",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve -s . -p 3000",
+    "dev": "npx serve -s . -p 3000"
+  },
+  "keywords": [
+    "english",
+    "learning",
+    "prepositions",
+    "drag-and-drop",
+    "vercel"
+  ],
+  "author": "annc19324",
+  "license": "MIT"
+}

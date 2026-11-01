@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EngMastery - Ôn Tập Cụm Từ & Giới Từ Tiếng Anh</title>
+  <meta name="description" content="Ứng dụng học và ôn tập cụm động từ, cụm tính từ đi với giới từ tiếng Anh thông qua tương tác kéo thả thông minh và ví dụ thực tế.">
+  <meta name="theme-color" content="#4f46e5">
+
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Canvas Confetti Library for Celebrations -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- App Styles -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand-wrapper">
+        <div class="brand-icon">🇬🇧</div>
+        <div class="brand-text">
+          <h1>EngMastery</h1>
+          <p>Ôn tập Cụm từ & Giới từ Tiếng Anh theo phương pháp kéo thả</p>
+        </div>
+      </div>
+
+      <div class="stats-group">
+        <div class="stat-pill streak" title="Chuỗi trả lời đúng liên tiếp">
+          <span>🔥</span>
+          <span>Chuỗi: <strong id="streak-val">0</strong></span>
+        </div>
+        <div class="stat-pill score" title="Điểm số tích lũy">
+          <span>⭐</span>
+          <span>Điểm: <strong id="score-val">0</strong></span>
+        </div>
+        <button class="btn-icon-toggle" id="btn-sound-toggle" title="Bật/Tắt âm thanh">
+          🔊 Âm thanh: Bật
+        </button>
+        <button class="btn-icon-toggle" id="btn-restart-top" title="Làm lại từ đầu">
+          🔄 Bắt đầu lại
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="tabs-bar" aria-label="Chế độ học">
+      <button class="tab-btn active" id="tab-practice">
+        <span>🎯</span> Chế độ Kéo Thả Ôn Luyện
+      </button>
+      <button class="tab-btn" id="tab-reference">
+        <span>📚</span> Sổ Tay Tra Cứu (16 Cụm từ)
+      </button>
+    </nav>
+
+    <!-- MAIN VIEW 1: Practice Arena -->
+    <main id="practice-view" class="practice-card">
+      <!-- Progress Bar -->
+      <div class="progress-container">
+        <div class="progress-header">
+          <span id="progress-label">Cụm 1/16 (Bước 1/2)</span>
+          <span id="category-badge" class="category-badge">Cụm động từ</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div id="progress-bar-fill" class="progress-bar-fill"></div>
+        </div>
+      </div>
+
+      <!-- Step Indicator -->
+      <div class="stage-indicator">
+        <div class="step-badge">
+          <span class="dot"></span>
+          <span id="step-badge-text">Bước 1/2: Nắm Cấu Trúc</span>
+        </div>
+      </div>
+
+      <!-- Question Prompt Banner -->
+      <div class="question-banner">
+        <div class="question-prompt-sub" id="question-prompt-sub">Chọn giới từ và dạng động từ đúng đi với:</div>
+        <div class="question-meaning">
+          <span id="question-meaning-text">Trông mong, mong đợi điều gì</span>
+          <button class="btn-audio-inline" id="btn-header-audio" title="Nghe phát âm chuẩn tiếng Anh">🔊</button>
+        </div>
+        <div class="question-hint-note" id="question-hint-note">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Two-Column Drag & Drop Arena -->
+      <div class="arena-grid">
+        <!-- Left Column: Draggable Card -->
+        <div class="column-left">
+          <div class="column-title">
+            <span>👈 Cột Bên Trái (Thẻ Kéo)</span>
+          </div>
+
+          <div class="draggable-slot" id="draggable-slot">
+            <div id="drag-item" class="drag-item" draggable="true" title="Kéo thẻ này hoặc bấm để chọn">
+              <div class="drag-item-handle">
+                <span>⠿</span> Kéo thả hoặc Chạm để chọn
+              </div>
+              <div class="drag-item-text" id="drag-item-text">look forward</div>
+              <div class="drag-item-sub">Từ / Cụm từ cần ghép</div>
+            </div>
+
+            <p class="drag-tip" id="drag-tip">
+              Kéo thả vào đáp án bên phải, hoặc bấm để chọn
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Column: 4 Drop Targets -->
+        <div class="column-right">
+          <div class="column-title">
+            <span>👉 Cột Bên Phải (4 Lựa Chọn Đáp Án)</span>
+          </div>
+
+          <div class="options-list" id="options-list">
+            <!-- Populated dynamically via app.js -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Dynamic Feedback Drawer (Correct / Wrong Result) -->
+      <div id="feedback-banner" class="feedback-banner">
+        <div class="feedback-header">
+          <div class="feedback-title-group">
+            <div class="feedback-icon" id="feedback-icon">🎉</div>
+            <div class="feedback-heading" id="feedback-heading">Chính xác!</div>
+          </div>
+        </div>
+        <div class="feedback-body" id="feedback-content-box">
+          <!-- Populated by JavaScript -->
+        </div>
+        <div class="feedback-actions" id="feedback-actions">
+          <!-- Button Next / Retry injected here -->
+        </div>
+      </div>
+    </main>
+
+    <!-- MAIN VIEW 2: Completion Screen -->
+    <section id="completion-view" class="practice-card completion-screen">
+      <div class="trophy-icon">🏆</div>
+      <h2 class="completion-title">Chúc mừng! Bạn đã hoàn thành xuất sắc!</h2>
+      <p class="completion-sub">
+        Bạn đã ghi nhớ trọn vẹn cả 16 cụm từ và thành thạo cách áp dụng cấu trúc & câu mẫu trong tiếng Anh!
+      </p>
+
+      <div class="score-summary-grid">
+        <div class="score-box">
+          <div class="score-box-num" id="final-score">320</div>
+          <div class="score-box-label">Tổng Điểm</div>
+        </div>
+        <div class="score-box">
+          <div class="score-box-num" id="final-streak">16</div>
+          <div class="score-box-label">Chuỗi Đúng Tối Đa</div>
+        </div>
+        <div class="score-box">
+          <div class="score-box-num" id="final-total">16 Cụm</div>
+          <div class="score-box-label">Đã Ôn Tập</div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+        <button class="btn-primary" id="btn-replay">
+          🔄 Ôn tập lại từ đầu
+        </button>
+      </div>
+    </section>
+
+    <!-- MAIN VIEW 3: Cheat Sheet / Reference Dictionary -->
+    <section id="reference-view" class="reference-view">
+      <div class="reference-filter-bar">
+        <button class="filter-chip active" data-filter="all">Tất cả (16 cụm)</button>
+        <button class="filter-chip" data-filter="verbs">Cụm Động từ (look forward, hear from, say hello to)</button>
+        <button class="filter-chip" data-filter="adjectives">Tính từ + Giới từ (good at, keen on, ...)</button>
+      </div>
+
+      <div class="cards-grid" id="ref-cards-grid">
+        <!-- Rendered by JavaScript -->
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>EngMastery - Ứng dụng ôn luyện tiếng Anh tương tác | Sẵn sàng triển khai trên Vercel ⚡</p>
+    </footer>
+  </div>
+
+  <!-- Main Application Logic (ES Module) -->
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
